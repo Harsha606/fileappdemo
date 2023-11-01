@@ -39,9 +39,10 @@ default_index=0, orientation="horizontal",icons=None,
 if selected_opt=='Sender':
   col1,col2=st.columns([5,5])
   with col1:
-      uploaded_file = st.file_uploader("Choose a file:")
-  type_of_file=uploaded_file.name.split['.'][-1]
-  if uploaded_file is not None and type_of_file=='csv':
+      uploaded_file = st.file_uploader("Choose a file:",accept_multiple_files=False)
+  if uploaded_file:
+      type_of_file=uploaded_file.name.split['.'][-1]
+      if type_of_file=='csv':
         # displaying the contents of the CSV file
         dataframe = pd.read_csv(uploaded_file,nrows=10)
         #data=uploaded_file.read()
