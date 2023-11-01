@@ -47,6 +47,6 @@ if selected_opt=='Sender':
         #st.write(data)
         st.dataframe(dataframe)
   with col2:
-    btn1=st.button(":blue[Encrypt and Upload File]",key="Key1")
+    btn1=st.button("Encrypt and Upload File",key="Key1")
     st.write("")
-    btn2=st.button(":blue[Upload File]",key="Key2")
+    btn2=st.button("Upload File",key="Key2")
