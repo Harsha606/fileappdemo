@@ -41,7 +41,7 @@ if selected_opt=='Sender':
   with col1:
       uploaded_file = st.file_uploader("Choose a file:")
   type_of_file=uploaded_file.name.split['.'][-1]
-  if uploaded_file is not None and type_of_file='csv':
+  if uploaded_file is not None and type_of_file=='csv':
         # displaying the contents of the CSV file
         dataframe = pd.read_csv(uploaded_file,nrows=10)
         #data=uploaded_file.read()
