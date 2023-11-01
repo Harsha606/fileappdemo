@@ -40,6 +40,7 @@ if selected_opt=='Sender':
     uploaded_file = st.file_uploader("Choose a file")
     if uploaded_file is not None:
         # displaying the contents of the CSV file
-        #dataframe = pd.read_csv(uploaded_file,encoding='unicode_escape')
-        data=uploaded_file.read()
-        st.write(data)
+        dataframe = pd.read_csv(uploaded_file,nrows=10)
+        #data=uploaded_file.read()
+        #st.write(data)
+        st.dataframe(dataframe)
