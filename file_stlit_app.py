@@ -45,7 +45,7 @@ if selected_opt=='Sender':
         dataframe = pd.read_csv(uploaded_file,nrows=10)
         #data=uploaded_file.read()
         #st.write(data)
-        st.dataframe(dataframe,reindex=True)
+        st.dataframe(dataframe,hide_index=True,use_column_width=True)
   with col2:
     btn1=st.button("Encrypt and Upload File",key="Key1")
     st.write("")
