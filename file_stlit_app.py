@@ -39,8 +39,9 @@ default_index=0, orientation="horizontal",icons=None,
 if selected_opt=='Sender':
   col1,col2,col3=st.columns([4,1,5])
   with col1:
-      uploaded_file = st.file_uploader("Choose a file")
+      uploaded_file = st.file_uploader("Choose a file:")
   with col2:
+      st.write("")
       type_of_file=st.selectbox("",["csv","xlsx"])
   if uploaded_file is not None:
         # displaying the contents of the CSV file
