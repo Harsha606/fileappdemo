@@ -39,7 +39,11 @@ default_index=0, orientation="horizontal",icons=None,
 if selected_opt=='Sender':
   col1,col2=st.columns(2)
   with col1:
-    uploaded_file = st.file_uploader("Choose a file")
+    col3,col4=st.columns([8,2])
+    with col3:
+      uploaded_file = st.file_uploader("Choose a file")
+    with col4:
+      type_of_file=st.selectbox("",["csv","xlsx"])
     if uploaded_file is not None:
         # displaying the contents of the CSV file
         dataframe = pd.read_csv(uploaded_file,nrows=10)
