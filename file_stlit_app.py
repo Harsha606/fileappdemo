@@ -37,6 +37,8 @@ default_index=0, orientation="horizontal",icons=None,
                 "nav-link-selected": {"background-color":"#1d1160", "color":"#ffffff"},
                 })
 if selected_opt=='Sender':
+  col1,col2=st.columns(2)
+  with col1:
     uploaded_file = st.file_uploader("Choose a file")
     if uploaded_file is not None:
         # displaying the contents of the CSV file
@@ -44,3 +46,7 @@ if selected_opt=='Sender':
         #data=uploaded_file.read()
         #st.write(data)
         st.dataframe(dataframe)
+  with col2:
+    btn1=st.button(":blue[Encrypt and Upload File]",key="Key1")
+    st.write("")
+    btn2=st.button(":blue[Upload File]",key="Key2")
