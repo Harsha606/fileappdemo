@@ -40,5 +40,5 @@ if selected_opt=='Sender':
     uploaded_file = st.file_uploader("Choose a file")
     if uploaded_file is not None:
         # displaying the contents of the CSV file
-        dataframe = pd.read_csv(uploaded_file,encoding='unicode_escape')
+        #dataframe = pd.read_csv(uploaded_file,encoding='unicode_escape')
         st.write("Sucessfully Loaded File")
