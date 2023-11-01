@@ -37,19 +37,17 @@ default_index=0, orientation="horizontal",icons=None,
                 "nav-link-selected": {"background-color":"#1d1160", "color":"#ffffff"},
                 })
 if selected_opt=='Sender':
-  col1,col2,col3=st.columns([4,1,5])
+  col1,col2=st.columns([5,5])
   with col1:
       uploaded_file = st.file_uploader("Choose a file:")
-  with col2:
-      st.write("")
-      type_of_file=st.selectbox("",["csv","xlsx"])
-  if uploaded_file is not None:
+  type_of_file=uploaded_file.name.split['.'][-1]
+  if uploaded_file is not None and type_of_file='csv':
         # displaying the contents of the CSV file
         dataframe = pd.read_csv(uploaded_file,nrows=10)
         #data=uploaded_file.read()
         #st.write(data)
         st.dataframe(dataframe)
-  with col3:
+  with col2:
     btn1=st.button("Encrypt and Upload File",key="Key1")
     st.write("")
     btn2=st.button("Upload File",key="Key2")
